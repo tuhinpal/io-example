@@ -1,0 +1,12 @@
+{
+  "name": "io-example",
+  "version": "1.0.0",
+  "description": "Some small socket.io project examples",
+  "keywords": [],
+  "author": "Tuhin Kanti Pal",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.2.0"
+  }
+}

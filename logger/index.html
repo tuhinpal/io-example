@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.io Logger</title>
+    <script
+      src="https://cdn.socket.io/4.2.0/socket.io.min.js"
+      integrity="sha384-PiBR5S00EtOj2Lto9Uu81cmoyZqR57XcOna1oAuVuIEjzj0wpqDVfD0JA9eXlRsj"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <pre>
+<code id="logs"></code>
+      </pre>
+  </body>
+  <script>
+    const socket = io();
+
+    log("Connecting...");
+
+    socket.on("connect", () => {
+      log(`Connection id: ${socket.id}`);
+    });
+
+    socket.on("log", (message) => {
+      log(message);
+    });
+
+    socket.io.on("reconnect_attempt", () => {
+      log("Reconnecting...");
+    });
+
+    function log(message) {
+      const pre = document.getElementById("logs");
+      const textContent = pre.textContent;
+      pre.textContent = textContent + message + "\n";
+    }
+  </script>
+</html>
