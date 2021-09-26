@@ -33,4 +33,4 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-httpServer.listen(5000);
+httpServer.listen(process.env.PORT || 5000);
