@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Some small socket.io project examples",
   "keywords": [],
+  "scripts": {
+    "start": "node editor"
+  },
   "author": "Tuhin Kanti Pal",
   "license": "MIT",
   "dependencies": {
